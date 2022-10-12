@@ -1102,6 +1102,8 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmbx8.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/lm/ec-lmbx6.tfm
 INPUT formeln.aux
 INPUT ./formeln.out
 INPUT ./formeln.out

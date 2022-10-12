@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {1.3}Fristgerechte Strukturbilanz}{2}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Jahresabschlusanalyse / Finanzwirtschaftliche Analyse}{2}{subsection.1.4}%
 \contentsline {subsubsection}{\numberline {1.4.1}Investitions- \& Vermögensstrukturanalyse}{2}{subsubsection.1.4.1}%
-\contentsline {section}{\numberline {2}Einkauf / Beschaffung \& Absatz / Marketing}{4}{section.2}%
-\contentsline {section}{\numberline {3}Finanzierung}{4}{section.3}%
-\contentsline {section}{\numberline {4}Investition}{4}{section.4}%
+\contentsline {section}{\numberline {2}Einkauf / Beschaffung \& Absatz / Marketing}{5}{section.2}%
+\contentsline {section}{\numberline {3}Finanzierung}{5}{section.3}%
+\contentsline {section}{\numberline {4}Investition}{5}{section.4}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
