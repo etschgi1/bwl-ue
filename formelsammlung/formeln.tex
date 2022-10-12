@@ -1,0 +1,162 @@
+\documentclass[11pt]{scrartcl}
+
+% Standard packages
+\usepackage[utf8]{inputenc}  % Input in UTF-8
+\usepackage[T1]{fontenc}  % Output in T1 fonts (westeuropäische Codierung)
+\usepackage{lmodern}  % latin modern fonts
+\usepackage[ngerman]{babel}  % deutsches Sprachpaket, neue Rechtschreibung
+
+% Seitensetup
+\usepackage{scrlayer-scrpage}  % Seitenformatierung durch KOMA-interne Optionen
+\usepackage[top=4cm, bottom=4cm]{geometry}  % Seitengeometrie (kann durch KOMA ersetzt werden, hab ich aber nicht geschafft)
+\usepackage[hypcap=false]{caption, subcaption}  % caption editing - hypcap warning with hyperref
+\usepackage{array}  % table editing
+
+% additional packages
+\usepackage{amsmath, amssymb, amstext}  % math packages (American Math Society)
+\usepackage{icomma}  % Kommata in Dezimalzahlen verursachen keinen Abstand mehr
+\usepackage{graphicx}  % Bilder einfügen
+\usepackage{float} %Bilder placement
+\usepackage{pdfpages}  % PDF als vollständige Seiten einfügen
+\usepackage{lastpage}  % referenziert die letzte Seite
+\usepackage[separate-uncertainty=true]{siunitx}  % bessere Darstellung von Einheiten
+\usepackage{makecell,booktabs} %Dicke Tabellenstriche
+\usepackage{wrapfig} %allow figure wrap
+%\usepackage{datatool}
+\usepackage[hidelinks]{hyperref}  % hyperref verlinkt Referenzen - hidelinks entfernt borders um links
+% allows for temporary adjustment of side margins
+\usepackage{chngpage}
+\usepackage{footnote} %footnote package
+
+%misc
+\newcommand*{\invisiblepar}{{\setlength{\parfillskip}{0pt}\par}\vskip-\parskip\noindent\ignorespaces}
+\usepackage{blindtext}
+% package setups
+% Kopf- und Fußzeile durch KOMA
+\pagestyle{scrheadings}  % KOMA darf entscheiden
+\clearpairofpagestyles  % reset
+\setkomafont{pageheadfoot}{\normalfont}  % Standardschrift in Kopf- und Fußzeile
+\captionsetup{format=plain, font=small, labelfont=bf} %Better caption, Abbildung ist FETT
+%\setlength{\headheight}{27.2pt}  % benötigte Höhe Kopfzeile (warning von scrlayer-scrpage, wird aber automatisch so gerendert, falls diese Option weggelassen wird)
+\ihead{Formel aus BWL UE}  % Kopf links 
+\chead{\textsc{Wachmann} Elias\\12004232}  % Kopf Mitte 
+\ohead{\today}  % Kopf rechts 
+\cfoot{\pagemark \, / \pageref{LastPage}}  % Fuß Mitte
+%noindent after figure:
+\AfterEndEnvironment{figure}{\noindent\ignorespaces}
+%Setup for footnotes in tables
+\makesavenoteenv{tabular}
+%Overbar setup
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+%Roman numerals
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+% Table of Contents
+\DeclareTOCStyleEntry{dottedtocline}{section}  % KOMA intern - Inhaltsverzeichnis mit Punkten (nur sections)
+% SI
+\sisetup{locale = DE}  % deutschsprachige SI-Konvention
+\DeclareSIUnit\permille{\text{\textperthousand}} %for permille Symbol
+% array
+\renewcommand{\arraystretch}{1.2}
+
+\begin{document}
+
+% \includepdf{Deckblatt.pdf} %Uni kein Deckblatt
+%Title
+\title{Formeln aus BWL UE}
+\author{\textsc{Wachmann} Elias\\12004232}
+\date{\today}
+\maketitle
+
+\tableofcontents
+s\newpage
+\section{Unternehmensbeurteilung}
+\subsection{Kenngrößen des Quick-Tests:}
+
+\begin{equation}
+    \text{Eigenkapitalquote} = \frac{\text{Eigenkapital}}{\text{Gesamtkapital}}
+\end{equation}
+\begin{equation}
+    \text{Schuldentilgungsdauer (in Jahren)} = \frac{\text{Fremdkapital} - \text{Liquide Mittel}}{\text{Praktiker Cashflow}}
+\end{equation}
+\begin{equation}
+    \text{Gesamtkapitalrentabilität} = \frac{\text{Gewinn (vor Steuer)} + \text{Fremdkapitalzinsen}}{\text{Gesamtkapital}}
+\end{equation}
+\begin{equation}
+    \text{Cashflow-Leistungsrate} = \frac{\text{Praktiker Cashflow}}{\text{Betriebsleistung}} 
+\end{equation}
+Der Praktiker-Cashflow errechnet sich wie folgt: 
+\begin{multline*}
+    \text{Praktiker-Cashflow} = \text{Jahresüberschuss} +\text{Abschreibungen im AV} - \text{Zuschreibungen im AV}\\ + \text{Erhöhung langf. Rückst.} - \text{Senkung langf. Rückst.} + \text{Buchwertabgang}
+\end{multline*}
+\subsection{Strukturbilanz}
+\textbf{TODO}
+\subsection{Fristgerechte Strukturbilanz}
+\textbf{TODO}
+\subsection{Jahresabschlusanalyse / Finanzwirtschaftliche Analyse}
+\subsubsection{Investitions- \& Vermögensstrukturanalyse}
+\textbf{Intensitätskennzahlen}
+\begin{equation}
+    \text{Anlageintensität} = 100\cdot\frac{\text{Anlagevermögen}}{\text{Gesamtvermögen}} \hspace*{1cm} \text{bereinigte Werte verwenden!}
+\end{equation}
+\begin{equation}
+    \text{Umlaufvermögensintensität} = 100\cdot\frac{\text{Umlaufvermögen}}{\text{Gesamtvermögen}} \hspace*{1cm} \text{bereinigte Werte verwenden!}
+\end{equation}
+\begin{equation}
+    \text{Vorratsintensität} = 100\cdot\frac{\text{Vorräte}}{\text{Gesamtvermögen}} 
+\end{equation}
+\textbf{Umschlagskoeffizienten}
+\begin{multline}
+    \text{Umschlagshäufigkeit} = \frac{\text{Umsätze inkl. Ust (20 \%)}}{\varnothing\text{gebundenes Vermögen}} \\ \text{mit} \hspace*{1cm} \varnothing\text{gebundenes Vermögen} = \frac{\text{Vermögen im Jahr } x_1+\text{Vermögen im Jahr } x_2}{2}
+\end{multline}
+\begin{equation}
+    \text{Umschlagsdauer} = \frac{365}{\text{Umschlagshäufigkeit}}
+\end{equation}
+\begin{equation}
+    \text{Umschlagshäufigkeit der Debitoren} = \frac{\text{Umsätze inkl. Ust (20 \%)}}{\varnothing\text{Bestand Forderungen aus L\&L}}
+\end{equation}
+\begin{equation}
+    \text{Umschlagdauer der Debitoren} = \frac{365}{\text{Umschlagshäufigkeit der Debitoren}}
+\end{equation}
+\begin{equation}
+    \text{Umschlagshäufigkeit der Kreditoren} = \frac{\text{Umsätze inkl. Ust (20 \%)}}{\varnothing\text{Bestand Verbindlichkeiten aus L\&L }}
+\end{equation}
+\begin{equation}
+    \text{Umschlagdauer der Kreditoren} = \frac{365}{\text{Umschlagshäufigkeit der Kreditoren}}
+\end{equation}
+\begin{equation}
+    \text{Umschlagshäufigkeit der Vorräte} = \frac{\text{Vorratsverbrauch}}{\varnothing\text{Bestand der Vorräte }}
+\end{equation}
+\begin{equation}
+    \text{Umschlagdauer der Vorräte} = \frac{365}{\text{Umschlagshäufigkeit der Vorräte}}
+\end{equation}
+\begin{equation}
+    \text{Sachanlagenabschreibungsquote} = 100\cdot\frac{\text{planmäßige Abschreibung}}{\frac{\text{historische AK}}{\text{HK}} + \text{Zugänge} \pm \text{Umbuchungen}}
+\end{equation}
+\begin{multline}
+    \text{Sachanlagenabnutzungsgrad} = 100\cdot\frac{\text{kummulierte Abschreibung}-\text{Zuschreibungen}}{\frac{\text{historische AK}}{\text{HK}} + \text{Zugänge} \pm \text{Umbuchungen}}
+\end{multline}
+\begin{multline}
+    \text{Sachanlageninvestitionsquote} = 100\cdot\frac{\text{Nettoinvestitions ins Anlagevermögen}}{\text{Anfangsbestand Anlagevermögen zu Buchwerten}}
+\end{multline}
+\begin{multline}
+    \text{Investitionsdeckung der Anlagen} = 100\cdot\frac{\text{Nettoinvestitions ins Anlagevermögen}}{\text{planmäßige Abschreibung}}
+\end{multline}
+\subsubsection[]{Finanzierungs- \& Kapitalstrukturanalyse}
+\subsubsection[]{Liquiditätsanalyse}
+\subsubsection[]{Dynamische Liquiditätsanalyse}
+\subsection[]{Erfolgswirtschaftliche Analyse}
+\subsubsection[]{Erfolgsanalyse}
+\subsubsection[]{Rentabilitätsanalyse}
+\subsection[]{Reorganisationsbedarf im Sinne des URG}
+\section{Einkauf / Beschaffung \& Absatz / Marketing}
+\section{Finanzierung}
+\subsection[]{Unterschiedliche Kreditformen}
+\subsection[]{Cashflow Berechnung}
+\subsection[]{Factoring}
+\subsection[]{Zero-Bonds}
+\subsection[]{Aktien}
+\subsection[]{Operation Blanche}
+\section{Investition}
+\subsection[]{Amortisation}
+\subsection[]{Dynamische Amortisation}
+\end{document}
